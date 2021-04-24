@@ -1,8 +1,11 @@
+let dataTab = []
+
 function doStuff(data) {
 	// J'ENLEVE LE PREMIER ELEMENT (LES ENTETES) ET LE DERNIER ELEMENT (ELEMENT VIDE)
 	data.pop()
 	data.shift()
-	return data
+	dataTab = data
+	makeCombinations()
 }
 
 function parseData(url, callBack) {

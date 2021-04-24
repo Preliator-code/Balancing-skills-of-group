@@ -63,3 +63,48 @@ nav a:hover{
 	color: white;
 	box-shadow: 2px 2px 2px black;
 }
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/*---- CHOIX DU CSV ----*/
+
+#chargementCsv div{
+	margin-bottom: 10px;
+}
+
+#choixCsv{
+	display: flex;
+}
+
+label{
+	font-size: 1.5em;
+	margin-right: 10px;
+}
+
+.containerRadio{
+	margin-right: 40px;
+}
+
+#NumberByGroup input{
+	height: 20px;
+	padding-left: 10px;
+	border-radius: 20px;
+	outline: none;
+  	border: none;
+  	box-shadow: 2px 2px 1px black;
+  	width: 40px;
+}
+
+#NumberByGroup p{
+	display: inline;
+	margin-left: 10px;
+	font-size: 1.3em;
+	color: #007128;
+	visibility: hidden;
+}

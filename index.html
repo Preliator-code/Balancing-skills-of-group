@@ -9,12 +9,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/style.css">
-	<!-- STYLE GOOGLE FONT -->
-<!-- 	<script defer src="lib/PapaParse-5.0.2/.eslintrc.js"></script>
-	<script defer src="lib/PapaParse-5.0.2/Gruntfile.js"></script> -->
+	<!-- LIBRAIRIE PapaParse -->
 	<script defer src="lib/PapaParse-5.0.2/papaparse.min.js"></script>
 	<script defer src="lib/PapaParse-5.0.2/papaparse.js"></script>
+	<!-- MES JS -->
+	<script defer src="js/main.js"></script>
 	<script defer src="js/openCSV.js"></script>
+	<script defer src="js/makeCombinations.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -26,6 +27,31 @@
 			</ul>
 		</nav>
 	</div>
-<!-- 	<input type="file"> -->
+	<fieldset id="chargementCsv">
+		<legend>Chargement du CSV</legend>
+		<div id="choixCsv">
+			<div class="containerRadio">
+				<label for="choix1">Charger un CSV</label>
+				<input type="radio" id="choix1" name="load" value="load" onchange="choixCsv(this)" checked>
+			</div>
+			<div class="containerRadio">
+				<label for="choix2">Entrée manuelle</label>
+				<input type="radio" id="choix2" name="load" value="manuel" onchange="choixCsv(this)">
+			</div>
+		</div>
+		<div id="ContainerChoix">
+			<div class="containerLoad">
+				<input type="file" name="load">
+			</div>
+			<div class="containerLoad">
+
+			</div>
+		</div>
+		<div id="NumberByGroup">
+			<label for="ChoixNumber">Nombre de personnes par groupe</label>
+			<input type="number" id="ChoixNumber" oninput="entreNbrPers(this)">
+			<p id="test"></p>
+		</div>
+	</fieldset>
 </body>
 </html>
