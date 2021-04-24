@@ -1,0 +1,49 @@
+ON PEUT TRAVAILLER AVEC UN OBJET OU UNE LISTE DE LISTE
+
+--- LISTE DE LISTE ---
+
+let ok
+
+function doStuff(data) {
+    ok = data
+    ok.forEach(entree => console.log(entree))
+}
+
+function parseData(url, callBack) {
+    Papa.parse(url, {
+        download: true,
+        dynamicTyping: true,
+        complete: function(results) {
+            callBack(results.data);
+        }
+    });
+}
+
+parseData("../Ressources/notes.csv", doStuff);
+
+
+
+
+
+
+--- OBJET ---
+
+let ok
+
+function doStuff(data) {
+    ok = data
+    ok.forEach(entree => console.log(entree.prenom))
+}
+
+function parseData(url, callBack) {
+    Papa.parse(url, {
+        header: true,
+		download: true,
+		dynamicTyping: true,
+        complete: function(results) {
+            callBack(results.data);
+        }
+    });
+}
+
+parseData("../Ressources/notes.csv", doStuff);
