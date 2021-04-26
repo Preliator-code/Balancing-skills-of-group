@@ -48,12 +48,12 @@ function makeCombinations(){
 		tabName.push(entree[0]);
 	})
 	tabCombinations = k_combinations(tabName, nombrePersonnes);
-	nombrePersonnes > 0 ? document.getElementById("test").style.visibility = 'visible' : document.getElementById("test").style.visibility = 'hidden'
-	document.getElementById("test").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
+	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.visibility = 'visible' : document.getElementById("showNumberCombinations").style.visibility = 'hidden'
+	document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
 }
 
 function hideElement(){
-	document.getElementById("test").style.visibility = 'hidden'
+	document.getElementById("showNumberCombinations").style.visibility = 'hidden'
 }
 
 function entreNbrPers(number){

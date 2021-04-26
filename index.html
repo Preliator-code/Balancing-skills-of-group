@@ -12,6 +12,8 @@
 	<!-- LIBRAIRIE PapaParse -->
 	<script defer src="lib/PapaParse-5.0.2/papaparse.min.js"></script>
 	<script defer src="lib/PapaParse-5.0.2/papaparse.js"></script>
+	<!-- LIBRAIRIE JQuery -->
+	<script defer src="lib/Jquery/jquery-3.6.0.js"></script>
 	<!-- MES JS -->
 	<script defer src="js/main.js"></script>
 	<script defer src="js/openCSV.js"></script>
@@ -27,30 +29,17 @@
 			</ul>
 		</nav>
 	</div>
-	<fieldset id="chargementCsv">
+	<fieldset id="chargementCsv" class="bloc">
 		<legend>Chargement du CSV</legend>
-		<div id="choixCsv">
-			<div class="containerRadio">
-				<label for="choix1">Charger un CSV</label>
-				<input type="radio" id="choix1" name="load" value="load" onchange="choixCsv(this)" checked>
-			</div>
-			<div class="containerRadio">
-				<label for="choix2">Entrée manuelle</label>
-				<input type="radio" id="choix2" name="load" value="manuel" onchange="choixCsv(this)">
-			</div>
-		</div>
 		<div id="ContainerChoix">
-			<div class="containerLoad">
-				<input type="file" name="load">
-			</div>
-			<div class="containerLoad">
-
+			<div id="loadMode" class="containerLoad">
+				<input type="file" name="load" id="pathCsv">
 			</div>
 		</div>
 		<div id="NumberByGroup">
-			<label for="ChoixNumber">Nombre de personnes par groupe</label>
+			<label for="ChoixNumber">Nbr de personnes par groupe</label>
 			<input type="number" id="ChoixNumber" oninput="entreNbrPers(this)">
-			<p id="test"></p>
+			<p id="showNumberCombinations"></p>
 		</div>
 	</fieldset>
 </body>

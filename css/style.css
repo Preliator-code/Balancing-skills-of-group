@@ -16,15 +16,6 @@ html, body {
 	flex-grow:1;
 }
 
-/*input{
-	height: 20px;
-	padding-left: 10px;
-	border-radius: 20px;
-	outline: none;
-  	border: none;
-  	box-shadow: 2px 2px 1px black;
-}*/
-
 /*---- HEADER ----*/
 
 #header{
@@ -64,15 +55,34 @@ nav a:hover{
 	box-shadow: 2px 2px 2px black;
 }
 
-legend {
+legend{
     background-color: #000;
     color: #fff;
     padding: 3px 6px;
     font-size: 2em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+label{
+	font-size: 1.5em;
+	margin-right: 10px;
+}
+
+input[type="number"]{
+	height: 20px;
+	padding-left: 10px;
+	border-radius: 20px;
+	outline: none;
+  	border: none;
+  	box-shadow: 2px 2px 1px black;
+  	width: 40px;
 }
 
 /*---- CHOIX DU CSV ----*/
+
+#chargementCsv{
+	width: 700px;
+}
 
 #chargementCsv div{
 	margin-bottom: 10px;
@@ -82,23 +92,8 @@ legend {
 	display: flex;
 }
 
-label{
-	font-size: 1.5em;
-	margin-right: 10px;
-}
-
 .containerRadio{
 	margin-right: 40px;
-}
-
-#NumberByGroup input{
-	height: 20px;
-	padding-left: 10px;
-	border-radius: 20px;
-	outline: none;
-  	border: none;
-  	box-shadow: 2px 2px 1px black;
-  	width: 40px;
 }
 
 #NumberByGroup p{

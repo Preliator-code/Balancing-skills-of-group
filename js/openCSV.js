@@ -1,9 +1,15 @@
 let dataTab = []
+let colName = []
+let test;
+let manualParameters = document.querySelectorAll(".manualEntry")
+let manuelNbrPersonnes;
+let manuelNbrCriteres;
 
 function doStuff(data) {
 	// J'ENLEVE LE PREMIER ELEMENT (LES ENTETES) ET LE DERNIER ELEMENT (ELEMENT VIDE)
+	colName = data.shift()
+	colName.shift()
 	data.pop()
-	data.shift()
 	dataTab = data
 	makeCombinations()
 }
@@ -19,5 +25,14 @@ function parseData(url, callBack) {
         }
     });
 }
+
+function handleFileSelect(evt) {
+	var file = evt.target.files[0];
+	parseData(file, doStuff);
+}
+
+$(document).ready(function(){
+    $("#pathCsv").change(handleFileSelect);
+});
 
 parseData("../Ressources/notes.csv", doStuff);
