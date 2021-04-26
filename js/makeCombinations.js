@@ -40,8 +40,6 @@ function k_combinations(set, k) {
 	return combs;
 }
 
-
-
 function makeCombinations(){
 	tabName = []
 	dataTab.forEach(entree => {
@@ -50,6 +48,7 @@ function makeCombinations(){
 	tabCombinations = k_combinations(tabName, nombrePersonnes);
 	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.visibility = 'visible' : document.getElementById("showNumberCombinations").style.visibility = 'hidden'
 	document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
+	preparetab()
 }
 
 function hideElement(){

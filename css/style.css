@@ -16,6 +16,33 @@ html, body {
 	flex-grow:1;
 }
 
+legend{
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+label{
+	font-size: 1.5em;
+	margin-right: 10px;
+}
+
+input[type="number"]{
+	height: 20px;
+	padding-left: 10px;
+	border-radius: 20px;
+	outline: none;
+  	border: none;
+  	box-shadow: 2px 2px 1px black;
+  	width: 40px;
+}
+
+.bloc{
+	width: 400px;
+}
+
 /*---- HEADER ----*/
 
 #header{
@@ -55,34 +82,7 @@ nav a:hover{
 	box-shadow: 2px 2px 2px black;
 }
 
-legend{
-    background-color: #000;
-    color: #fff;
-    padding: 3px 6px;
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-label{
-	font-size: 1.5em;
-	margin-right: 10px;
-}
-
-input[type="number"]{
-	height: 20px;
-	padding-left: 10px;
-	border-radius: 20px;
-	outline: none;
-  	border: none;
-  	box-shadow: 2px 2px 1px black;
-  	width: 40px;
-}
-
 /*---- CHOIX DU CSV ----*/
-
-#chargementCsv{
-	width: 700px;
-}
 
 #chargementCsv div{
 	margin-bottom: 10px;
@@ -97,9 +97,52 @@ input[type="number"]{
 }
 
 #NumberByGroup p{
-	display: inline;
-	margin-left: 10px;
+	margin: 10px 0 10px 10px;
 	font-size: 1.3em;
 	color: #007128;
 	visibility: hidden;
 }
+
+/*---- APERCU TABLE ----*/
+
+#test{
+	overflow: scroll;
+	height: 300px;
+	width: 421px;
+}
+
+table{
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+  	width: 100%;
+}
+
+td, th{
+	text-align: center;
+  	padding: 8px;
+}
+
+th{
+	background-color: #F0F0F0;
+	font-size: 1.1em;
+}
+
+tr{
+	background-color: #C5C5C5;
+}
+
+tr:nth-child(even){
+	background-color: #F0F0F0;
+}
+
+/*tr td:first-child{
+	font-weight: bold;
+}*/
+
+/*th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}*/
