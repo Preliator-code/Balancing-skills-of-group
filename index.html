@@ -20,6 +20,7 @@
 	<script defer src="js/makeCombinations.js"></script>
 	<script defer src="js/openCSV.js"></script>
 	<script defer src="js/makeTab.js"></script>
+	<script defer src="js/calculIndiceMulticritere.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -48,6 +49,10 @@
 		<legend>Aperçu du CSV</legend>
 		<div id="containerApercu"></div>
 	</fieldset>
+	<div id="choixPoids">
+		<label for="radioPoids">Paramétrer le poids des critères</label>
+		<input type="checkbox" onclick="manageWeight(this)">
+	</div>
 	<fieldset id="tabWeight" class="bloc">
 		<legend>Table des poids</legend>
 		<div id="containerWeight"></div>

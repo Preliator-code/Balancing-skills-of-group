@@ -9,7 +9,6 @@ function preparetab(){
 	let ligneTableHead = ""
 	let ligne = ""
 	let inputEnTete = "";
-	console.log(colName);
 
 	for (var i = 0; i < dataTab[0].length; i++) {
 		ligneTableHead += `	<th>
@@ -34,6 +33,4 @@ function preparetab(){
 	tableString += "</table>";
 
 	containerApercu.innerHTML = tableString;
-
-	makeTabWeight()
 }

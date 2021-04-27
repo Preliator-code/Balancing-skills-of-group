@@ -1,13 +1,12 @@
 let dataTab = []
 let colName = []
-let test;
-let manualParameters = document.querySelectorAll(".manualEntry")
-let manuelNbrPersonnes;
-let manuelNbrCriteres;
+let colNameLength;
 
 function doStuff(data) {
 	// J'ENLEVE LE PREMIER ELEMENT (LES ENTETES) ET LE DERNIER ELEMENT (ELEMENT VIDE)
-	colName = data.shift()
+	colName = []
+    colName = data.shift()
+    colNameLength = colName.length - 1
 	data.pop()
 	dataTab = data
 	makeCombinations()

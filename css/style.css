@@ -139,10 +139,10 @@ tr:nth-child(even){
 #containerWeight{
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-#containerWeight div{
-
+.containerWeightLittleTabMulti{
+	margin-right: 10px;
 }
