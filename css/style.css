@@ -100,12 +100,11 @@ nav a:hover{
 	margin: 10px 0 10px 10px;
 	font-size: 1.3em;
 	color: #007128;
-	visibility: hidden;
 }
 
 /*---- APERCU TABLE ----*/
 
-#test{
+#apercuCsv{
 	overflow: scroll;
 	height: 300px;
 	width: 421px;
@@ -135,14 +134,15 @@ tr:nth-child(even){
 	background-color: #F0F0F0;
 }
 
-/*tr td:first-child{
-	font-weight: bold;
-}*/
+/*---- TABLE POIDS ----*/
 
-/*th{
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}*/
+#containerWeight{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+#containerWeight div{
+
+}

@@ -46,13 +46,13 @@ function makeCombinations(){
 		tabName.push(entree[0]);
 	})
 	tabCombinations = k_combinations(tabName, nombrePersonnes);
-	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.visibility = 'visible' : document.getElementById("showNumberCombinations").style.visibility = 'hidden'
+	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.display = 'block' : document.getElementById("showNumberCombinations").style.display = 'none'
 	document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
 	preparetab()
 }
 
 function hideElement(){
-	document.getElementById("showNumberCombinations").style.visibility = 'hidden'
+	document.getElementById("showNumberCombinations").style.display = 'none'
 }
 
 function entreNbrPers(number){

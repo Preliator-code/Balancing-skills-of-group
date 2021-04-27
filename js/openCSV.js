@@ -8,7 +8,6 @@ let manuelNbrCriteres;
 function doStuff(data) {
 	// J'ENLEVE LE PREMIER ELEMENT (LES ENTETES) ET LE DERNIER ELEMENT (ELEMENT VIDE)
 	colName = data.shift()
-	// colName.shift()
 	data.pop()
 	dataTab = data
 	makeCombinations()

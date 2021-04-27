@@ -33,8 +33,7 @@ function preparetab(){
 	tableString += ligne
 	tableString += "</table>";
 
-	// conteneurEnTete.innerHTML = inputEnTete;
 	containerApercu.innerHTML = tableString;
 
-	// inputtab = document.querySelectorAll('#tab td select');
+	makeTabWeight()
 }

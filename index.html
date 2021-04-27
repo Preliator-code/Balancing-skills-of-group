@@ -16,8 +16,9 @@
 	<script defer src="lib/Jquery/jquery-3.6.0.js"></script>
 	<!-- MES JS -->
 	<script defer src="js/main.js"></script>
-	<script defer src="js/openCSV.js"></script>
+	<script defer src="js/makeTabWeight.js"></script>
 	<script defer src="js/makeCombinations.js"></script>
+	<script defer src="js/openCSV.js"></script>
 	<script defer src="js/makeTab.js"></script>
 </head>
 <body>
@@ -43,11 +44,13 @@
 			<p id="showNumberCombinations"></p>
 		</div>
 	</fieldset>
-	<div id="test">
-		<fieldset id="apercuCsv" class="bloc">
-			<legend>Aperçu du CSV</legend>
-			<div id="containerApercu"></div>
-		</fieldset>
-	</div>
+	<fieldset id="apercuCsv" class="bloc">
+		<legend>Aperçu du CSV</legend>
+		<div id="containerApercu"></div>
+	</fieldset>
+	<fieldset id="tabWeight" class="bloc">
+		<legend>Table des poids</legend>
+		<div id="containerWeight"></div>
+	</fieldset>
 </body>
 </html>
