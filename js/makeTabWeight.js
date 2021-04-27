@@ -1,16 +1,19 @@
 let tabCriteres;
 
+// SI JE DECOCHE LA CHECKBOX, J'EFFACE TOUT
 function notWeight(){
 	containerWeight.innerHTML = ""
 }
 
+// SI JE COCHE LA CHECKBOX, JE VERIFIE LE NOMBRE DE CRITERES ET J'AGIS EN FONCTION
 function prepareTabMulti(){
-	(colName.length - 1) < 3 ? makeLittleTabMulti() : makeTabMulti()
+	// JE DOIS PLACER UNE CONDITION, SINON colName SE FAIT ENLEVER LE PREMIER ELEMENT A CHAQUE MODIFICATION DU PREMIER input (CAR LA FONCTION EST RELANCEE SYSTEMATIQUEMENT)
+	colName.length > colNameLength ? colName.shift() : ""
+	(colName.length) < 3 ? makeLittleTabMulti() : makeTabMulti()
 }
 
 function makeLittleTabMulti(){
 	let ligne = ""
-	console.log(tabCriteres);
 	for (var i = 1; i < colName.length; i++) {
 		ligne +=	`<div class="containerWeightLittleTabMulti">
 						<label>Poids ${colName[i]}</label>
@@ -22,8 +25,6 @@ function makeLittleTabMulti(){
 
 function makeTabMulti(){
 	tabCriteres = []
-	// JE DOIS PLACER UNE CONDITION, SINON colName SE FAIT ENLEVER LE PREMIER ELEMENT A CHAQUE MODIFICATION DU PREMIER input (CAR LA FONCTION EST RELANCEE SYSTEMATIQUEMENT)
-	colName.length > colNameLength ? colName.shift() : ""
 	tabCriteres = colName
 	let comptCell = 0
 	let tableString = "<table id='tabMulti'>";
