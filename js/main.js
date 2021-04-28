@@ -1,11 +1,12 @@
 let typeEntree;
 let containerLoad = document.querySelectorAll(".containerLoad")
-let containerWeight = document.getElementById("containerWeight")
+let containerMatrice = document.getElementById("containerMatrice")
+
 
 function choixCsv(button) {
 	typeEntree = button.value
 }
 
 function manageWeight(button){
-	button.checked ? prepareTabMulti() : containerWeight.innerHTML = ""
+	button.checked ? prepareTabMulti() : closeContainerWeight()
 }

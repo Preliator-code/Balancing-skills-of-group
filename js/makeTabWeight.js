@@ -1,26 +1,35 @@
 let tabCriteres;
+let comptEntree = 0;
+// RECUPERER LES DIV DE MA PAGE POUR POUVOIR LES AFFICHER/CACHER
+let conteneurAllWithoutCritere = document.getElementsByClassName("conteneur")
 
 // SI JE DECOCHE LA CHECKBOX, J'EFFACE TOUT
-function notWeight(){
-	containerWeight.innerHTML = ""
+function closeContainerWeight(){
+	document.getElementById("fieldset_weight").style.display = 'none'
+	containerMatrice.innerHTML = ""
+	someInputNotFill()
 }
 
 // SI JE COCHE LA CHECKBOX, JE VERIFIE LE NOMBRE DE CRITERES ET J'AGIS EN FONCTION
 function prepareTabMulti(){
+	document.getElementById("fieldset_weight").style.display = 'block'
 	// JE DOIS PLACER UNE CONDITION, SINON colName SE FAIT ENLEVER LE PREMIER ELEMENT A CHAQUE MODIFICATION DU PREMIER input (CAR LA FONCTION EST RELANCEE SYSTEMATIQUEMENT)
-	colName.length > colNameLength ? colName.shift() : ""
+	if(colName.length > colNameLength){
+		colName.shift()
+	}
+
 	(colName.length) < 3 ? makeLittleTabMulti() : makeTabMulti()
 }
 
 function makeLittleTabMulti(){
 	let ligne = ""
 	for (var i = 1; i < colName.length; i++) {
-		ligne +=	`<div class="containerWeightLittleTabMulti">
+		ligne +=	`<div class="containerMatriceLittleTabMulti">
 						<label>Poids ${colName[i]}</label>
 						<input type="number" class="weightLittleTabMulti">
 					</div>`
 	}
-	containerWeight.innerHTML = ligne
+	containerMatrice.innerHTML = ligne
 }
 
 function makeTabMulti(){
@@ -76,13 +85,15 @@ function makeTabMulti(){
 	tableString += "</table>";
 	tableString += "<p id='alerteChamps' class='avertissement'>*Veuillez remplir tous les champs pour continuer</p>";
 
-	containerWeight.innerHTML = tableString;
+	containerMatrice.innerHTML = tableString;
 
 	inputTabMulti = document.querySelectorAll('#tabMulti td select');
 
 	readOnlyCell(inputTabMulti)
 	reordonneArray(inputTabMulti)
 	returnInputTabMulti()
+	controlMain()
+	prepareTabWeight()
 }
 
 
@@ -95,14 +106,14 @@ function prepareTabWeight(tabPoids){
 	let comptCell = 0
 
 	for (var i = 0; i < colName.length; i++) {
-		ligne += `<tr><th class='enTete'>Critère ${(i<9) ? ('0' + (i + 1)) : (i + 1)}</th><td class='aRemplir'>-</td></tr>`
+		ligne += `<tr><th class='enTete'>${tabCriteres[i]}</th><td class='aRemplir'>-</td></tr>`
 	}
 	tableString += tableHead
 	tableString += ligne
 	tableString += "</table>";
 
-	// J'AJOUTE LE TABLEAU AU CONTENU DEJA EXISTANT DE LA DIV conteneurTablePoids 
-	document.getElementById('conteneurTablePoids').innerHTML = conteneurTablePoids + tableString;
+	// J'AJOUTE LE TABLEAU AU CONTENU DEJA EXISTANT DE LA DIV containerTabWeight 
+	document.getElementById('containerTabWeight').innerHTML = tableString;
 }
 
 

@@ -30,11 +30,11 @@ function calculIndices(tabColumnFinal, inputTabMulti){
 	
 	// AFFICHER L'ELEMENT
 	let coherenceMoyenne = average(sommePondereeSurPriorite)
-	document.getElementById("valeurPropre").innerHTML = coherenceMoyenne.toFixed(2)
+	// document.getElementById("valeurPropre").innerHTML = coherenceMoyenne.toFixed(2)
 
 	//------------ CALCUL ET AFFICHAGE DE L'INDICE DE COHERENCE (CI)
-	let indiceDeCoherence = (coherenceMoyenne - nbrClass.value) / (nbrClass.value - 1)
-	document.getElementById("ci").innerHTML = indiceDeCoherence.toFixed(2)
+	let indiceDeCoherence = (coherenceMoyenne - colName.length) / (colName.length - 1)
+	// document.getElementById("ci").innerHTML = indiceDeCoherence.toFixed(2)
 
 	//------------ CALCUL ET AFFICHAGE DU RATIO DE COHERENCE (CR)
 	let ratioDeCoherence = indiceDeCoherence / ri
@@ -45,9 +45,9 @@ function calculIndices(tabColumnFinal, inputTabMulti){
 }
 
 function calculRi(){
-	meanOfEigenValue = ((2.7699*nbrClass.value)-4.3513)
-	ri = (meanOfEigenValue - nbrClass.value) / (nbrClass.value-1)
-	document.getElementById("ri").innerHTML = ri.toFixed(2)
+	meanOfEigenValue = ((2.7699*colName.length)-4.3513)
+	ri = (meanOfEigenValue - colName.length) / (colName.length-1)
+	// document.getElementById("ri").innerHTML = ri.toFixed(2)
 	return ri
 }
 
@@ -67,7 +67,7 @@ function calculValeurPropreMax(tabColumnFinal, numColumn){
 }
 
 function priorityTab(tabCritere, average, tabMean){
-	for (var i = 0; i < nbrClass.value; i++) {
+	for (var i = 0; i < colName.length; i++) {
 		// CHAQUE FOIS QUE JE RECOMMENCE UNE BOUCLE, JE VIDE LE TABLEAU QUI CONTIENDRA LA PREMIERE VALEUR DE CHAQUE TABLEAU
 		let tabFirstElement = []
 		tabCritere.forEach(entree => {
@@ -82,14 +82,14 @@ function priorityTab(tabCritere, average, tabMean){
 function priorityWeightedSum(tabColumnFinal, tabMean){
 	let sommePonderee = []
 	// JE REPETE PAR LE NOMBRE DE FOIS QU'IL Y A DE CRITERES
-	for (var i = 0; i < nbrClass.value; i++) {
+	for (var i = 0; i < colName.length; i++) {
 		let valeur = 0
 		let tabFirstElement = []
 		// JE PARCOURS CHAQUE ELEMENTS DE TABLEAU DES ENTREES POUR NE GARDER QUE LES PREMIERES VALEURS
 		tabColumnFinal.forEach(entree => {
 			tabFirstElement.push(entree[i])
 		})
-		for (var j = 0; j < nbrClass.value; j++) {
+		for (var j = 0; j < colName.length; j++) {
 			valeur += (tabFirstElement[j] * tabMean[j])
 		}
 		sommePonderee.push(valeur)
@@ -99,7 +99,7 @@ function priorityWeightedSum(tabColumnFinal, tabMean){
 
 function weightedSumDividedByPriority(sommePonderee, tabMean){
 	let sommePondereeSurPriorite = []
-	for (var i = 0; i < nbrClass.value; i++) {
+	for (var i = 0; i < colName.length; i++) {
 		sommePondereeSurPriorite.push(sommePonderee[i] / tabMean[i])
 	}
 	return sommePondereeSurPriorite
@@ -108,11 +108,11 @@ function weightedSumDividedByPriority(sommePonderee, tabMean){
 function significatifRi(){
 	document.getElementById("cr").style.backgroundColor = '#3EDB00'
 	document.getElementById("alerteCr").style.visibility = 'hidden'
-	document.querySelector("#conteneurTablePoids table").style.backgroundColor = '#3FCF00'
+	document.querySelector("#containerTabWeight table").style.backgroundColor = '#3FCF00'
 }
 
 function nonSignificatifRi(){
 	document.getElementById("cr").style.backgroundColor = '#BC0000'
 	document.getElementById("alerteCr").style.visibility = 'visible'
-	document.querySelector("#conteneurTablePoids table").style.backgroundColor = '#FF5252'
+	document.querySelector("#containerTabWeight table").style.backgroundColor = '#FF5252'
 }

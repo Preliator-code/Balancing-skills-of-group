@@ -39,9 +39,9 @@ input[type="number"]{
   	width: 40px;
 }
 
-.bloc{
+/*.bloc{
 	width: 400px;
-}
+}*/
 
 /*---- HEADER ----*/
 
@@ -110,39 +110,129 @@ nav a:hover{
 	width: 421px;
 }
 
-table{
+#apercuCsv table{
 	font-family: Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
   	width: 100%;
 }
 
-td, th{
+#apercuCsv td, th{
 	text-align: center;
   	padding: 8px;
 }
 
-th{
+#apercuCsv th{
 	background-color: #F0F0F0;
 	font-size: 1.1em;
 }
 
-tr{
+#apercuCsv tr{
 	background-color: #C5C5C5;
 }
 
-tr:nth-child(even){
+#apercuCsv tr:nth-child(even){
 	background-color: #F0F0F0;
 }
 
+
 /*---- TABLE POIDS ----*/
 
-#containerWeight{
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
+.containerMatriceLittleTabMulti{
+	margin-right: 10px;
 }
 
-.containerWeightLittleTabMulti{
-	margin-right: 10px;
+.containerFlex{
+	display: flex;
+}
+
+.conteneur{
+	visibility: hidden;
+}
+
+#fieldset_weight{
+	display: none;
+}
+
+#fieldset_weight table{
+    background: rgba(63, 58, 58, 0.9);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 90px;
+    max-height: 300px;
+    font-size:1em;
+	color:white;
+}
+
+#fieldset_weight th{
+	border: 1px solid #00BE87;
+	text-align: center;
+	padding: 6px;
+	font-weight: bold;
+	font-size: 1.3em;
+	overflow: hidden;
+	min-width: 85px;
+}
+
+#fieldset_weight .enTete{
+	width: 80px;
+	font-weight: bold;
+}
+
+#fieldset_weight table, td{
+	border: 1px solid #00BE87;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+	font-weight: normal;
+	overflow: hidden;
+}
+
+#fieldset_weight .inputCell{
+	width: 70px;
+	background-color: white;
+	text-align: center;
+}
+
+.elementResume{
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	font-size: 1.7em;
+}
+
+.avertissement{
+	color: #A00000;
+	font-size: 13px;
+}
+
+#cr{
+	border-radius: 15px;
+	color: white;
+	padding: 5px;
+	height: 30px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#alerteChamps{
+	margin-top: 10px;
+	text-align: left;
+}
+
+#alerteCr{
+	margin-left: 20px;
+}
+
+#containerTabWeight{
+	margin-left: 100px;
+}
+
+#tabPoids{
+	box-shadow: 1px 1px 1px black;
+	background-color: red;
+}
+
+#tabPoids th, #tabPoids td{
+	border: 1px solid black;
 }

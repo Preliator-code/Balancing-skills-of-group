@@ -15,11 +15,13 @@
 	<!-- LIBRAIRIE JQuery -->
 	<script defer src="lib/Jquery/jquery-3.6.0.js"></script>
 	<!-- MES JS -->
+	<script defer src="js/longFunction.js"></script>
 	<script defer src="js/main.js"></script>
 	<script defer src="js/makeTabWeight.js"></script>
 	<script defer src="js/makeCombinations.js"></script>
 	<script defer src="js/openCSV.js"></script>
 	<script defer src="js/makeTab.js"></script>
+	<script defer src="js/controlTabMulti.js"></script>
 	<script defer src="js/calculIndiceMulticritere.js"></script>
 </head>
 <body>
@@ -53,9 +55,19 @@
 		<label for="radioPoids">Paramétrer le poids des critères</label>
 		<input type="checkbox" onclick="manageWeight(this)">
 	</div>
-	<fieldset id="tabWeight" class="bloc">
+	<fieldset id="fieldset_weight" class="bloc">
 		<legend>Table des poids</legend>
-		<div id="containerWeight"></div>
+		<div class="containerFlex">
+			<div id="containerMatrice"></div>
+			<div id="containerTabWeight" class="conteneur"></div>
+		</div>
+		<div id="conteneurInfos" class="conteneur">
+			<div class="elementResume">
+				<p>Ratio de cohérence (CR) :</p> 
+				<p class="variable" id="cr">-</p>
+				<span id='alerteCr' class="avertissement">Le ration de cohérence est supérieur à 10%.<br>Vous devriez revoir la matrice.</span>
+			</div>
+		</div>
 	</fieldset>
 </body>
 </html>
