@@ -1,6 +1,4 @@
 let containerApercu;
-let names;
-let tabScore = []
 
 function preparetab(){
 	containerApercu = document.getElementById("containerApercu")
@@ -35,20 +33,4 @@ function preparetab(){
 	tableString += "</table>";
 
 	containerApercu.innerHTML = tableString;
-
-	getValueFromData()
-}
-
-// RECUPERATION DES NOTES ATTRIBUEES A CHAQUE PERSONNES (SANS LE NOM DE LA PERSONNE)
-function getValueFromData(){
-	for (var i = 0; i < dataTab.length; i++) {
-		tabScore[i] = []
-		for (var j = 1; j < dataTab[1].length; j++) {
-			tabScore[i][j] = dataTab[i][j]
-		}
-	}
-	// MALHEUREUSEMENT, LA TECHNIQUE DU DESSUS ME CREE DES VALEURS "empty" DANS CHAQUE PREMIERE VALEUR DE CHAQUE TABLEAU. JE DOIS LES ENLEVER.
-	tabScore.forEach(entree =>{
-		entree.shift()
-	})
 }
