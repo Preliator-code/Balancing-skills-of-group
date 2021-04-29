@@ -236,3 +236,7 @@ nav a:hover{
 #tabPoids th, #tabPoids td{
 	border: 1px solid black;
 }
+
+.aRemplir{
+    font-size: 1.3em;
+}
