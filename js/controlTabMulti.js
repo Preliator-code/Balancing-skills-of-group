@@ -1,3 +1,5 @@
+
+
 function controlMain(){
 	comptEntree = 0;
 	let tabId = []
@@ -72,9 +74,6 @@ function getColumnValues(inputTabMulti){
 			}
 		}
 	})
-	console.log(tabColumn);
-	console.log(tabValue);
-	console.log(inputTabMulti);
 	calculIndices(convertToDoubleDimension(tabColumn, tabValue), inputTabMulti)
 }
 

@@ -1,9 +1,7 @@
-let tabMean = []
-
 function calculIndices(tabColumnFinal, inputTabMulti){
 	let meanOfEigenValue;
 	let ri;
-	tabMean = []
+	let tabMean = []
 	let numColumn = 0
 	tabColumn = []
 	tabValue = []
@@ -111,7 +109,6 @@ function significatifRi(){
 	document.getElementById("cr").style.backgroundColor = '#3EDB00'
 	document.getElementById("alerteCr").style.visibility = 'hidden'
 	document.querySelector("#containerTabWeight table").style.backgroundColor = '#3FCF00'
-	getScoreForEachPerson()
 }
 
 function nonSignificatifRi(){
