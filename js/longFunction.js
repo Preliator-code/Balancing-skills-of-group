@@ -159,3 +159,19 @@ function convertValueToReal(entree){
 			break;
 	}
 }
+
+// FONCTION POUR CONVERTIR 2 TABLEAUX EN 1 TABLEAU A DOUBLE DIMENSIONS
+function convertToDoubleDimension(tabNumColumn, tabValueColumn){
+	// JE CREE UN TABLEAU QUI DEVIENDRA UNE DOUBLE DIMENSION QUI CONTIENDRA LES VALEURS DE CHAQUE COLONNE
+	let tabColumnValue = new Array()
+	for (var i = 0; i < dataTab.length; i++) {
+		tabColumnValue[i] = new Array()
+		for (var j = 0; j < dataTab[1].length; j++) {
+			if (tabNumColumn[j] === i) {
+				tabColumnValue[i][j] = tabValueColumn[j]
+			}
+		}
+	}
+	console.log(tabColumnValue);
+	// return removeEmptyValues(tabColumnValue)
+}
