@@ -111,11 +111,12 @@ function significatifRi(){
 	document.getElementById("cr").style.backgroundColor = '#3EDB00'
 	document.getElementById("alerteCr").style.visibility = 'hidden'
 	document.querySelector("#containerTabWeight table").style.backgroundColor = '#3FCF00'
-	getScoreForEachPerson()
+	
 }
 
 function nonSignificatifRi(){
 	document.getElementById("cr").style.backgroundColor = '#BC0000'
 	document.getElementById("alerteCr").style.visibility = 'visible'
 	document.querySelector("#containerTabWeight table").style.backgroundColor = '#FF5252'
+	getScoreForEachPerson()
 }

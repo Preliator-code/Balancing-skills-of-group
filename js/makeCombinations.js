@@ -42,9 +42,13 @@ function k_combinations(set, k) {
 
 function makeCombinations(){
 	tabName = []
-	dataTab.forEach(entree => {
-		tabName.push(entree[0]);
-	})
+	// AU LIEU DE GENERER LES COMBINAISONS AVEC LES PRENOMS, JE LE FAIS AVEC DES CHIFFRES POUR M'EVITER DE FAIRE UNE JOINTURE EN JS
+	for (var i = 0; i < dataTab.length; i++) {
+		tabName.push(i)
+	}
+	// dataTab.forEach(entree => {
+	// 	tabName.push(entree[0]);
+	// })
 	tabCombinations = k_combinations(tabName, nombrePersonnes);
 	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.display = 'block' : document.getElementById("showNumberCombinations").style.display = 'none'
 	document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length

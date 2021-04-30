@@ -50,5 +50,4 @@ function getValueFromData(){
     tabScore.forEach(entree =>{
         entree.shift()
 	})
-	console.log(tabScore);
 }
