@@ -3,12 +3,10 @@ let tabScorePersonTotal = []
 let tabScoreByCombination = []
 let compt;
 let incrementation;
+let quart1;
+let quart3;
 
 function getScoreForEachPerson(){
-    // console.log(colName);
-    console.log(tabMean);
-    // console.log(tabScore);
-
     // RECUPERATION DU SCORE DE CHAQUE MATIERE RELATIF AU POIDS
     for (var i = 0; i < tabScore.length; i++) {
     	tabScoreWeighted[i] = []
@@ -24,9 +22,8 @@ function getScoreForEachPerson(){
     getScoreForEachCombination()
 }
 
+// CALCUL DU SCORE DE CHAQUE COMBINAISON
 function getScoreForEachCombination(){
-	console.log(tabScorePersonTotal);
-	console.log(tabCombinations);
 	tabCombinations.forEach(combinaisonList =>{
 		compt = 0
 		combinaisonList.forEach(combinaisonElement =>{
@@ -38,5 +35,12 @@ function getScoreForEachCombination(){
 		})
 		tabScoreByCombination.push(compt)
 	})
-	console.log(tabScoreByCombination);
+	getQuantileAndFilter()
+}
+
+// OBTENIR LES QUARTILES 1 ET 3, ET FILTRER
+function getQuantileAndFilter(){
+	quart1 = ss.quantile(tabScoreByCombination, 0.25);
+	quart3 = ss.quantile(tabScoreByCombination, 0.75);
+	console.log(quart1, quart3);
 }

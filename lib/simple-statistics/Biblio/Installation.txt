@@ -1,0 +1,14 @@
+SOLUTION 1 : AVEC UN LIEN
+
+<script src='https://unpkg.com/simple-statistics@7.7.0/dist/simple-statistics.min.js'></script>
+
+--> Il suffira ensemble d'appeler les méthodes avec "ss".
+
+--> console.log(ss.min([1, 5, -10, 100, 2]));
+
+-----------------------------------------------------------
+
+SOLUTION 2 : ON IMPORTE
+
+PAS TROUVE DE SOLUTION : JAI UNE ERREUR DE MERDE - 
+DevTools failed to load SourceMap: Could not load content for http://localhost:3000/lib/simple-statistics/simple-statistics.min.js.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
