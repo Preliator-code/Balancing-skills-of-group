@@ -9,6 +9,7 @@ let jsonPerson = []
 let scoreCombination = []
 
 function getScoreForEachPerson(){
+	jsonPerson = []
     // RECUPERATION DU SCORE DE CHAQUE MATIERE RELATIF AU POIDS
     for (var i = 0; i < tabScore.length; i++) {
     	tabScoreWeighted[i] = []
@@ -47,13 +48,13 @@ function getScoreForEachCombination(){
 
 // OBTENIR LES QUARTILES 1 ET 3, ET CREER UN NOUVEL OBJET DE COMBINAISON QUI NE CONTIENT QUE LES CORRESPONDANTS
 function getQuantileAndFilter(){
+	jsonCombinationRetained = []
 	quart1 = ss.quantile(scoreCombination, 0.25);
 	quart3 = ss.quantile(scoreCombination, 0.75);
-
 	jsonCombination.forEach(jsonElement =>{
 		if (jsonElement.scoreCombinaison > quart1 && jsonElement.scoreCombinaison < quart3) {
 			jsonCombinationRetained.push(jsonElement)
 		} 
 	})
-	console.log(jsonCombinationRetained);
+	bestCombination()
 }
