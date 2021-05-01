@@ -1,6 +1,7 @@
 let tabName = []
 let tabCombinations = []
 let nombrePersonnes;
+let jsonCombination = []
 
 function k_combinations(set, k) {
 	var i, j, combs, head, tailcombs;
@@ -42,18 +43,22 @@ function k_combinations(set, k) {
 
 function makeCombinations(){
 	tabName = []
-	// AU LIEU DE GENERER LES COMBINAISONS AVEC LES PRENOMS, JE LE FAIS AVEC DES CHIFFRES POUR M'EVITER DE FAIRE UNE JOINTURE EN JS
-	for (var i = 0; i < dataTab.length; i++) {
-		tabName.push(i)
-	}
-	// dataTab.forEach(entree => {
-	// 	tabName.push(entree[0]);
-	// })
+	dataTab.forEach(entree => {
+		tabName.push(entree[0]);
+	})
 	tabCombinations = k_combinations(tabName, nombrePersonnes);
+	for (var i = 0; i < tabCombinations.length; i++) {
+	    jsonCombination.push({
+	        numero: i,
+	        contenant: tabCombinations[i]
+	    });
+	}
 	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.display = 'block' : document.getElementById("showNumberCombinations").style.display = 'none'
 	document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
 	preparetab()
 }
+
+
 
 function hideElement(){
 	document.getElementById("showNumberCombinations").style.display = 'none'
