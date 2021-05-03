@@ -1,5 +1,3 @@
-
-
 function controlMain(){
 	comptEntree = 0;
 	let tabId = []

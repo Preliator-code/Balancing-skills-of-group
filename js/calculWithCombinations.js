@@ -1,12 +1,16 @@
 let tabScoreWeighted = []
 let tabScorePersonTotal = []
 let jsonCombinationRetained = []
+let jsonCombinationRetainedExtra = []
 let compt;
 let quart1;
+let quart1Extra;
 let quart3;
+let quart3Extra;
 let jsonPerson = []
 
 let scoreCombination = []
+let scoreCombinationExtra = []
 
 function getScoreForEachPerson(){
 	jsonPerson = []
@@ -42,6 +46,22 @@ function getScoreForEachCombination(){
 		scoreCombination.push(compt)
 		jsonElement.scoreCombinaison = compt
 	})
+
+	if (dataTab.length % nombrePersonnes !== 0) {
+		jsonCombinationExtra.forEach(jsonElement =>{
+			compt = 0
+			jsonElement.contenant.forEach(combinaisonElement =>{
+				jsonPerson.forEach(personElement =>{
+					if (combinaisonElement === personElement.nom) {
+						compt += personElement.scoreTotal
+					}
+				})
+			})
+			scoreCombinationExtra.push(compt)
+			jsonElement.scoreCombinaison = compt
+		})
+	}
+
 	getQuantileAndFilter()
 }
 
@@ -55,5 +75,17 @@ function getQuantileAndFilter(){
 			jsonCombinationRetained.push(jsonElement)
 		} 
 	})
+
+	if (dataTab.length % nombrePersonnes !== 0) {
+		jsonCombinationRetainedExtra = []
+		quart1Extra = ss.quantile(scoreCombinationExtra, 0.25);
+		quart3Extra = ss.quantile(scoreCombinationExtra, 0.75);
+		jsonCombinationExtra.forEach(jsonElement =>{
+			if (jsonElement.scoreCombinaison > quart1Extra && jsonElement.scoreCombinaison < quart3Extra) {
+				jsonCombinationRetainedExtra.push(jsonElement)
+			} 
+		})
+	}
+
 	bestCombination()
 }

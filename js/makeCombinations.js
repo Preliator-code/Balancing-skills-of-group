@@ -1,7 +1,9 @@
 let tabName = []
 let tabCombinations = []
+let tabCombinationsExtra = []
 let nombrePersonnes;
 let jsonCombination = []
+let jsonCombinationExtra = []
 
 function k_combinations(set, k) {
 	var i, j, combs, head, tailcombs;
@@ -46,6 +48,7 @@ function makeCombinations(){
 	dataTab.forEach(entree => {
 		tabName.push(entree[0]);
 	})
+
 	tabCombinations = k_combinations(tabName, nombrePersonnes);
 	for (var i = 0; i < tabCombinations.length; i++) {
 	    jsonCombination.push({
@@ -53,8 +56,25 @@ function makeCombinations(){
 	        contenant: tabCombinations[i]
 	    });
 	}
+
+	// SI LE NOMBRE DE PERSONNE PAR GROUPE VOULU EST NON DIVISIBLE PAR LE NOMBRE DE PERSONNE, JE RAJOUTE JUSTE UNE AUTRE TABLE DE COMBINAISON
+	if (dataTab.length % nombrePersonnes !== 0) {
+		tabCombinationsExtra = k_combinations(tabName, tabName.length - (nombrePersonnes * (Math.floor(tabName.length / nombrePersonnes) - 1)));
+		for (var i = 0; i < tabCombinationsExtra.length; i++) {
+		    jsonCombinationExtra.push({
+		        numero: i,
+		        contenant: tabCombinationsExtra[i]
+		    });
+		}
+		document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + (tabCombinations.length + tabCombinationsExtra.length)
+	}
+
+	if (dataTab.length % nombrePersonnes === 0) {
+		document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
+	}
+
 	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.display = 'block' : document.getElementById("showNumberCombinations").style.display = 'none'
-	document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
+	
 	preparetab()
 }
 
