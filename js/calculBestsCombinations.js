@@ -5,6 +5,7 @@ let compteur = 0
 let aleatNumber;
 let jsonAleat = []
 let compoExtraAleat = []
+let listDiv
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -94,11 +95,23 @@ function bestCombination(){
 			})
 		}
 	}
-
-	console.log(jsonCompoFinale);
 	compteur += 1
-	console.log(compteur);
-	console.log(a_remplir);
-	console.log("TERMINE");
-	
+	showOptimisedGroup()
+}
+
+function showOptimisedGroup(){
+	listDiv = ""
+	// JE TRIS LE JSON PAR SCORE DECROISSANT
+	jsonCompoFinale.sort(function(a, b){
+	    return b.scoreEquipe - a.scoreEquipe;
+	});
+	for(var i = 0; i < jsonCompoFinale.length; i++){
+		listDiv += `<div class='groupsContainer'>
+						<p>Groupe ${i + 1}</p>
+						<p>${jsonCompoFinale[i].compositionPersonnes.join("; ")}</p>
+						<p>Score : ${jsonCompoFinale[i].scoreEquipe}</p>
+					</div>`			
+	}
+	console.log(listDiv);
+	document.getElementById("showOptimize").innerHTML = listDiv
 }
