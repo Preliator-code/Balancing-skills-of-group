@@ -7,7 +7,8 @@ let quart1;
 let quart1Extra;
 let quart3;
 let quart3Extra;
-let jsonPerson = []
+let jsonPerson = [];
+let noteMax, noteMaxExtra;
 
 let scoreCombination = []
 let scoreCombinationExtra = []
@@ -70,22 +71,23 @@ function getQuantileAndFilter(){
 	jsonCombinationRetained = []
 	quart1 = ss.quantile(scoreCombination, 0.25);
 	quart3 = ss.quantile(scoreCombination, 0.75);
+	noteMax = ss.max(scoreCombination);
 	jsonCombination.forEach(jsonElement =>{
 		if (jsonElement.scoreCombinaison > quart1 && jsonElement.scoreCombinaison < quart3) {
 			jsonCombinationRetained.push(jsonElement)
-		} 
+		}
 	})
 
 	if (dataTab.length % nombrePersonnes !== 0) {
 		jsonCombinationRetainedExtra = []
 		quart1Extra = ss.quantile(scoreCombinationExtra, 0.25);
 		quart3Extra = ss.quantile(scoreCombinationExtra, 0.75);
+		noteMaxExtra = ss.max(scoreCombinationExtra);
 		jsonCombinationExtra.forEach(jsonElement =>{
 			if (jsonElement.scoreCombinaison > quart1Extra && jsonElement.scoreCombinaison < quart3Extra) {
 				jsonCombinationRetainedExtra.push(jsonElement)
-			} 
+			}
 		})
 	}
-
 	bestCombination()
 }

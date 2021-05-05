@@ -252,12 +252,14 @@ nav a:hover{
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	margin-bottom: 20px;
 }
 
 .groupsContainer{
 	display: flex;
 	flex-direction: column;
 	margin: 10px;
+	width: 250px;
 	font-size: 1.4em;
 	align-items: center;
 	justify-content: center;
@@ -267,30 +269,37 @@ nav a:hover{
 	box-shadow: 1px 1px 1px black;
 }
 
-.groupsContainer > p{
+.groupsContainer h1{
     font-weight: bold;
     font-size: 1.2em;
-/*    margin-bottom: 5px;*/
-}
-
-.groupsContainer p:nth-of-type(2){
-	padding: 10px 0 10px 0;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
 }
 
 .groupsContainer .score{
 	background-color: #00A50C;
 	border-radius: 15px;
     color: white;
+    margin-top: -5px;
     padding: 5px;
     font-weight: bold;
     text-align: center;
-    width: 110px;
+    width: 150px;
     box-shadow: 1px 1px 1px #818181;
 }
 
 .containerPersonnes{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
+	padding: 10px 0 10px 0;
+}
+
+.containerPersonnes p{
+	margin: 0 10px 15px 0;
+	background-color: #EDEDED;
+	padding: 5px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px black;
 }

@@ -34,8 +34,6 @@ function trieAleatoireJson(){
 }
 
 function bestCombination(){
-	console.log(jsonPerson);
-	console.log(jsonCombinationRetained);
 	if (dataTab.length % nombrePersonnes !== 0) {
 		console.log(jsonCombinationRetainedExtra);
 	}
@@ -111,13 +109,13 @@ function showOptimisedGroup(){
 			listPerson += `<p>${personne}</p>`
 		})
 		listDiv += `<div class='groupsContainer'>
-						<p>Groupe ${i + 1}</p>
+						<h1>Groupe ${i + 1}</h1>
 						<div class='containerPersonnes'>
 							${listPerson}
 						</div>
-						<p class='score'>Score : ${jsonCompoFinale[i].scoreEquipe}</p>
-					</div>`			
+						<p class='score'>${jsonCompoFinale[i].scoreEquipe} / ${jsonCompoFinale[i].compositionPersonnes.length == nombrePersonnes ? noteMax.toFixed(0) : noteMaxExtra.toFixed(0)}</p>
+					</div>`		
 	}
-	console.log(listDiv);
+
 	document.getElementById("showOptimize").innerHTML = listDiv
 }
