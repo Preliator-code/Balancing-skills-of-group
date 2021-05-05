@@ -267,7 +267,7 @@ nav a:hover{
 	box-shadow: 1px 1px 1px black;
 }
 
-.groupsContainer p:first-child{
+.groupsContainer > p{
     font-weight: bold;
     font-size: 1.2em;
 /*    margin-bottom: 5px;*/
@@ -277,7 +277,7 @@ nav a:hover{
 	padding: 10px 0 10px 0;
 }
 
-.groupsContainer p:last-child{
+.groupsContainer .score{
 	background-color: #00A50C;
 	border-radius: 15px;
     color: white;
@@ -286,4 +286,11 @@ nav a:hover{
     text-align: center;
     width: 110px;
     box-shadow: 1px 1px 1px #818181;
+}
+
+.containerPersonnes{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }

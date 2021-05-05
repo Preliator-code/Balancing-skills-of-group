@@ -106,10 +106,16 @@ function showOptimisedGroup(){
 	    return b.scoreEquipe - a.scoreEquipe;
 	});
 	for(var i = 0; i < jsonCompoFinale.length; i++){
+		listPerson = ""
+		jsonCompoFinale[i].compositionPersonnes.forEach(personne =>{
+			listPerson += `<p>${personne}</p>`
+		})
 		listDiv += `<div class='groupsContainer'>
 						<p>Groupe ${i + 1}</p>
-						<p>${jsonCompoFinale[i].compositionPersonnes.join("; ")}</p>
-						<p>Score : ${jsonCompoFinale[i].scoreEquipe}</p>
+						<div class='containerPersonnes'>
+							${listPerson}
+						</div>
+						<p class='score'>Score : ${jsonCompoFinale[i].scoreEquipe}</p>
 					</div>`			
 	}
 	console.log(listDiv);
