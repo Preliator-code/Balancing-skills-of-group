@@ -41,7 +41,7 @@ function controlInput(inputEntree, idInputEntree, tabIdInputEntree, comptEntree)
 function someInputNotFill(){
 	conteneurAllWithoutCritere[0].style.visibility = 'hidden'
 	conteneurAllWithoutCritere[1].style.visibility = 'hidden'
-	document.getElementById("alerteChamps").style.display = 'block'
+	// document.getElementById("alerteChamps").style.display = 'block'
 	document.getElementById("alerteCr").style.display = 'none'
 }
 

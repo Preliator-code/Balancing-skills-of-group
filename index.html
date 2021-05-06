@@ -36,44 +36,51 @@
 			</ul>
 		</nav>
 	</div>
-	<fieldset id="chargementCsv" class="bloc">
-		<legend>Chargement du CSV</legend>
-		<div id="ContainerChoix">
-			<div id="loadMode" class="containerLoad">
-				<input type="file" name="load" id="pathCsv">
+	<div id="containerGlobal">
+		<div id="containerCsv">
+			<fieldset id="chargementCsv" class="bloc">
+				<legend>Chargement du CSV</legend>
+				<div id="ContainerChoix">
+					<div id="loadMode" class="containerLoad">
+						<input type="file" name="load" id="pathCsv">
+					</div>
+				</div>
+			</fieldset>
+			<fieldset id="apercuCsv" class="bloc">
+				<legend>Aperçu</legend>
+				<div id="containerApercu"></div>
+			</fieldset>
+			<fieldset id="infosSupp" class="bloc">
+				<legend>Informations</legend>
+				<div id="NumberByGroup">
+					<label for="ChoixNumber">Nbr de personnes par groupe</label>
+					<input type="number" id="ChoixNumber" oninput="entreNbrPers(this)">
+					<p id="showNumberCombinations"></p>
+				</div>
+				<div id="choixPoids">
+					<label for="radioPoids">Paramétrer le poids des critères</label>
+					<input type="checkbox" onclick="manageWeight(this)">
+				</div>
+			</fieldset>
+		</div>
+		<fieldset id="fieldset_weight" class="bloc">
+			<legend>Table des poids</legend>
+			<div class="containerFlex">
+				<div id="containerMatrice"></div>
+				<div id="containerTabWeight" class="conteneur"></div>
 			</div>
-		</div>
-		<div id="NumberByGroup">
-			<label for="ChoixNumber">Nbr de personnes par groupe</label>
-			<input type="number" id="ChoixNumber" oninput="entreNbrPers(this)">
-			<p id="showNumberCombinations"></p>
-		</div>
-	</fieldset>
-	<fieldset id="apercuCsv" class="bloc">
-		<legend>Aperçu du CSV</legend>
-		<div id="containerApercu"></div>
-	</fieldset>
-	<div id="choixPoids">
-		<label for="radioPoids">Paramétrer le poids des critères</label>
-		<input type="checkbox" onclick="manageWeight(this)">
+			<div id="conteneurInfos" class="conteneur">
+				<div class="elementResume">
+					<p>Ratio de cohérence (CR) :</p> 
+					<p class="variable" id="cr">-</p>
+					<span id='alerteCr' class="avertissement">Le ration de cohérence est supérieur à 10%.<br>Vous devriez revoir la matrice.</span>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset id="fieldset_show" class="bloc">
+			<legend>Groupes optimisés</legend>
+			<div id="showOptimize" class="containerFlex"></div>
+		</fieldset>
 	</div>
-	<fieldset id="fieldset_weight" class="bloc">
-		<legend>Table des poids</legend>
-		<div class="containerFlex">
-			<div id="containerMatrice"></div>
-			<div id="containerTabWeight" class="conteneur"></div>
-		</div>
-		<div id="conteneurInfos" class="conteneur">
-			<div class="elementResume">
-				<p>Ratio de cohérence (CR) :</p> 
-				<p class="variable" id="cr">-</p>
-				<span id='alerteCr' class="avertissement">Le ration de cohérence est supérieur à 10%.<br>Vous devriez revoir la matrice.</span>
-			</div>
-		</div>
-	</fieldset>
-	<fieldset id="fieldset_show" class="bloc">
-		<legend>Groupes optimisés</legend>
-		<div id="showOptimize" class="containerFlex"></div>
-	</fieldset>
 </body>
 </html>
