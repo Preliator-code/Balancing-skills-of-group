@@ -28,7 +28,7 @@ legend{
     color: #fff;
     padding: 3px 6px;
     font-size: 1.6em;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
 }
 
 label{
@@ -56,6 +56,13 @@ input[type="number"]{
 	align-items: center;
 	width: 100%;
 	justify-content: space-between;
+}
+
+button, input, optgroup, select, textarea {
+     margin: 0; 
+     font-family: normal; 
+     font-size: 16px; 
+     line-height: normal; 
 }
 
 /*---- HEADER ----*/
@@ -108,18 +115,6 @@ nav a:hover{
 	margin-right: 40px;
 }
 
-#infosSupp div{
-	margin-bottom: 10px;
-}
-
-#infosSupp p{
-/*	margin: 10px 0 10px 10px;*/
-	margin-top: 5px;
-	font-size: 1.3em;
-	color: #007128;
-}
-
-
 /*---- APERCU TABLE ----*/
 
 #apercuCsv{
@@ -157,6 +152,43 @@ nav a:hover{
 #apercuCsv tr:nth-child(even){
 	background-color: #F0F0F0;
 }
+
+/*---- INFOS SUPP----*/
+
+#infosSupp{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#infosSupp div{
+	margin-bottom: 10px;
+}
+
+#infosSupp p{
+	margin-top: 5px;
+	font-size: 1.3em;
+	color: #007128;
+}
+
+#infosSupp button{
+	align-self: center;
+	padding: 5px;
+	border-radius: 50px;
+	background-color: #adaf0a;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+	border: 0px;
+	box-shadow: 1px 1px 1px black;
+}
+
+#infosSupp button:hover{
+	background-color: white;
+	color: #adaf0a;
+	box-shadow: 2px 2px 5px black;
+}
+
 
 /*---- TABLE POIDS ----*/
 

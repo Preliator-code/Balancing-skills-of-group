@@ -9,9 +9,16 @@ let quart3;
 let quart3Extra;
 let jsonPerson = [];
 let noteMax, noteMaxExtra;
-
 let scoreCombination = []
 let scoreCombinationExtra = []
+
+function continueWithoutWeight(){
+	tabMean = []
+	for (var i = 0; i < colNameLength; i++) {
+		tabMean.push(1)
+	}
+	getScoreForEachPerson()
+}
 
 function getScoreForEachPerson(){
 	jsonPerson = []

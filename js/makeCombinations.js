@@ -78,8 +78,6 @@ function makeCombinations(){
 	preparetab()
 }
 
-
-
 function hideElement(){
 	document.getElementById("showNumberCombinations").style.display = 'none'
 }
@@ -87,4 +85,13 @@ function hideElement(){
 function entreNbrPers(number){
 	nombrePersonnes = number.value;
 	nombrePersonnes > 0 ? makeCombinations() : hideElement()
+}
+
+function buttonEnvoyer(){
+	if (nombrePersonnes > 0 && document.getElementById("checkBox").checked) {
+		prepareTabMulti()
+	}
+	if (nombrePersonnes > 0 && (!(document.getElementById("checkBox").checked))) {
+		continueWithoutWeight()
+	}
 }
