@@ -37,6 +37,7 @@ function getScoreForEachPerson(){
 	        scoreTotal: sumArray(tabScoreWeighted[i])
 	    });
     }
+    console.log(jsonPerson);
     getScoreForEachCombination()
 }
 
@@ -69,7 +70,6 @@ function getScoreForEachCombination(){
 			jsonElement.scoreCombinaison = compt
 		})
 	}
-
 	getQuantileAndFilter()
 }
 

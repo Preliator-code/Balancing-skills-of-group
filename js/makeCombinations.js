@@ -44,6 +44,8 @@ function k_combinations(set, k) {
 }
 
 function makeCombinations(){
+	jsonCombination = []
+	jsonCombinationExtra = []
 	tabName = []
 	dataTab.forEach(entree => {
 		tabName.push(entree[0]);

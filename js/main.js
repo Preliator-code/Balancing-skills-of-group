@@ -7,6 +7,6 @@ function choixCsv(button) {
 	typeEntree = button.value
 }
 
-function manageWeight(button){
-	button.checked ? prepareTabMulti() : closeContainerWeight()
-}
+// function manageWeight(button){
+// 	button.checked ? prepareTabMulti() : closeContainerWeight()
+// }
