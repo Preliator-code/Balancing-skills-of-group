@@ -42,6 +42,7 @@ function getScoreForEachPerson(){
 
 // CALCUL DU SCORE DE CHAQUE COMBINAISON
 function getScoreForEachCombination(){
+	scoreCombination = []
 	jsonCombination.forEach(jsonElement =>{
 		compt = 0
 		jsonElement.contenant.forEach(combinaisonElement =>{
@@ -108,6 +109,5 @@ function getQuantileAndFilter(){
 		})
 	}
 	personOnRetained = [...new Set(personOnRetained)]
-	console.log(personOnRetained);
 	personOnRetained.length === dataTab.length ? bestCombination() : console.log("NON !" + personOnRetained.length);
 }
