@@ -119,9 +119,9 @@ nav a:hover{
 
 #apercuCsv{
 	overflow: scroll;
-	height: 250px;
+	height: 245px;
 	width: 421px;
-	margin: 0 80px 40px 80px;
+	margin: 0 80px 20px 80px;
 }
 
 #apercuCsv table{
@@ -208,7 +208,7 @@ nav a:hover{
 #fieldset_weight{
 	display: none;
 	position: relative;
-/*	margin: 0 auto 0 auto;*/
+	margin-bottom: 20px;
 }
 
 #fieldset_weight table{
@@ -254,7 +254,6 @@ nav a:hover{
 .elementResume{
 	display: flex;
 	align-items: center;
-	margin-bottom: 15px;
 	margin-top: 15px;
 	font-size: 1.7em;
 }
@@ -310,7 +309,6 @@ nav a:hover{
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	margin-bottom: 20px;
 }
 
 .groupsContainer{

@@ -7,6 +7,23 @@ function choixCsv(button) {
 	typeEntree = button.value
 }
 
-// function manageWeight(button){
-// 	button.checked ? prepareTabMulti() : closeContainerWeight()
-// }
+function entreNbrPers(number){
+	nombrePersonnes = number.value;
+	nombrePersonnes > 0 ? makeCombinations() : hideElement()
+}
+
+function buttonEnvoyer(){
+	if (nombrePersonnes > 0 && document.getElementById("checkBox").checked) {
+		// document.getElementById("fieldset_show").style.display = "none"
+		// removeContainerWeight()
+		toutRemplis === 0 ? prepareTabMulti() : scenarioDeux()
+	}
+	if (nombrePersonnes > 0 && (!(document.getElementById("checkBox").checked))) {
+		continueWithoutWeight()
+		removeContainerWeight()
+	}
+}
+
+function scenarioDeux(){
+	(comptEntree === ((colName.length * colName.length - colName.length) / 2)) ? allInputFill() : someInputNotFill()
+}
