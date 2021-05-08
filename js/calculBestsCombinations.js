@@ -43,7 +43,7 @@ function bestCombination(){
 			jsonCompoFinale = []
 			groupFinal = []
 
-			jsonCombination.forEach(jsonElement =>{
+			jsonCombinationRetained.forEach(jsonElement =>{
 				if (! jsonElement.contenant.some(i => a_remplir.includes(i))) {
 					jsonCompoFinale.push({
 						numeroCompo: jsonElement.numero,
@@ -55,6 +55,7 @@ function bestCombination(){
 					})
 				}
 			})
+			compteur += 1
 		}
 	}
 
@@ -79,7 +80,7 @@ function bestCombination(){
 			})
 
 
-			jsonCombination.forEach(jsonElement =>{
+			jsonCombinationRetained.forEach(jsonElement =>{
 				if (! jsonElement.contenant.some(i => a_remplir.includes(i))) {
 					jsonCompoFinale.push({
 						numeroCompo: jsonElement.numero,
@@ -91,9 +92,10 @@ function bestCombination(){
 					})
 				}
 			})
+			compteur += 1
 		}
 	}
-	compteur += 1
+	console.log(compteur);
 	showOptimisedGroup()
 }
 

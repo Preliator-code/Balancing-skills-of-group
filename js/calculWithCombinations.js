@@ -76,8 +76,8 @@ function getScoreForEachCombination(){
 function getQuantileAndFilter(){
 	jsonCombinationRetained = []
 	jsonCombinationRetainedExtra = []
-	quart1 = ss.quantile(scoreCombination, 0.25);
-	quart3 = ss.quantile(scoreCombination, 0.75);
+	quart1 = ss.quantile(scoreCombination, 0.35);
+	quart3 = ss.quantile(scoreCombination, 0.65);
 	noteMax = ss.max(scoreCombination);
 	jsonCombination.forEach(jsonElement =>{
 		if (jsonElement.scoreCombinaison > quart1 && jsonElement.scoreCombinaison < quart3) {
