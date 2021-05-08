@@ -75,6 +75,7 @@ function getScoreForEachCombination(){
 // OBTENIR LES QUARTILES 1 ET 3, ET CREER UN NOUVEL OBJET DE COMBINAISON QUI NE CONTIENT QUE LES CORRESPONDANTS
 function getQuantileAndFilter(){
 	jsonCombinationRetained = []
+	jsonCombinationRetainedExtra = []
 	quart1 = ss.quantile(scoreCombination, 0.25);
 	quart3 = ss.quantile(scoreCombination, 0.75);
 	noteMax = ss.max(scoreCombination);
@@ -85,7 +86,6 @@ function getQuantileAndFilter(){
 	})
 
 	if (dataTab.length % nombrePersonnes !== 0) {
-		jsonCombinationRetainedExtra = []
 		quart1Extra = ss.quantile(scoreCombinationExtra, 0.25);
 		quart3Extra = ss.quantile(scoreCombinationExtra, 0.75);
 		noteMaxExtra = ss.max(scoreCombinationExtra);

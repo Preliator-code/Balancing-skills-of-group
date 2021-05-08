@@ -1,7 +1,7 @@
 let a_remplir = [];
 let jsonCompoFinale = []
 let groupFinal = []
-let compteur = 0
+let compteur
 let aleatNumber;
 let jsonAleat = []
 let compoExtraAleat = []
@@ -34,6 +34,8 @@ function trieAleatoireJson(){
 }
 
 function bestCombination(){
+	compteur = 0
+	a_remplir = []
 	if (dataTab.length % nombrePersonnes === 0) {
 		while (a_remplir.length < dataTab.length) {
 			trieAleatoireJson()
@@ -57,6 +59,7 @@ function bestCombination(){
 	}
 
 	if (dataTab.length % nombrePersonnes !== 0) {
+		aleatNumber = getRandomInt(jsonCombinationRetainedExtra.length)
 		while (a_remplir.length < dataTab.length) {
 			trieAleatoireJson()
 			a_remplir = []
