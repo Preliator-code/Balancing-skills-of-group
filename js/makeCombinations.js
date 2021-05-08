@@ -99,7 +99,7 @@ function entreNbrPers(number){
 function buttonEnvoyer(){
 	if (nombrePersonnes > 0 && document.getElementById("checkBox").checked) {
 		document.getElementById("fieldset_show").style.display = "none"
-		removeContainerWeight()
+		// removeContainerWeight()
 		prepareTabMulti()
 	}
 	if (nombrePersonnes > 0 && (!(document.getElementById("checkBox").checked))) {
