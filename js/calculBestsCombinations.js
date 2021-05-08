@@ -118,6 +118,7 @@ function showOptimisedGroup(){
 						<p class='score'>${jsonCompoFinale[i].scoreEquipe} <span class='noteMax'>/ ${jsonCompoFinale[i].compositionPersonnes.length == nombrePersonnes ? noteMax.toFixed(0) : noteMaxExtra.toFixed(0)}</span></p>
 					</div>`		
 	}
+	console.log(jsonCompoFinale);
 	document.getElementById("fieldset_show").style.display = "block"
 	document.getElementById("showOptimize").innerHTML = listDiv
 }

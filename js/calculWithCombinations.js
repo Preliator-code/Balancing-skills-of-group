@@ -109,8 +109,9 @@ function getQuantileAndFilter(){
 			})
 		})
 	}
-	console.log(jsonCombinationRetainedExtra);
-	console.log(quart1Extra,quart3Extra );
 	personOnRetained = [...new Set(personOnRetained)]
 	personOnRetained.length === dataTab.length ? bestCombination() : console.log("NON !" + personOnRetained.length);
+
+	console.log(jsonCombinationRetained);
+	console.log(jsonCombinationRetainedExtra);
 }

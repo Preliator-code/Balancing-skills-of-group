@@ -1,3 +1,5 @@
+let toutRemplis = 0;
+
 function controlMain(){
 	comptEntree = 0;
 	let tabId = []
@@ -46,6 +48,7 @@ function someInputNotFill(){
 }
 
 function allInputFill(){
+	toutRemplis = 1
 	getColumnValues(inputTabMulti)
 	document.getElementById("alerteChamps").style.display = 'none'
 	document.getElementById("alerteCr").style.display = 'block'
