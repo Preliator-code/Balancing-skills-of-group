@@ -68,11 +68,11 @@ function makeCombinations(){
 		        contenant: tabCombinationsExtra[i]
 		    });
 		}
-		document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + (tabCombinations.length + tabCombinationsExtra.length)
+		document.getElementById("showNumberCombinations").innerHTML = "Nbr de combinaisons généré : " + tabCombinations.length + "+ " + tabCombinationsExtra.length
 	}
 
 	if (dataTab.length % nombrePersonnes === 0) {
-		document.getElementById("showNumberCombinations").innerHTML = "Nombre de combinaisons généré : " + tabCombinations.length
+		document.getElementById("showNumberCombinations").innerHTML = "Nbr de combinaisons généré : " + tabCombinations.length
 	}
 
 	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.display = 'block' : document.getElementById("showNumberCombinations").style.display = 'none'
@@ -91,9 +91,24 @@ function entreNbrPers(number){
 
 function buttonEnvoyer(){
 	if (nombrePersonnes > 0 && document.getElementById("checkBox").checked) {
+		document.getElementById("fieldset_show").style.display = "none"
+		removeContainerWeight()
 		prepareTabMulti()
 	}
 	if (nombrePersonnes > 0 && (!(document.getElementById("checkBox").checked))) {
 		continueWithoutWeight()
+		// JE FAIS DISPARAITRE LE BLOC "GROUPE OPTIMISE" A CHAQUE FOIS, CAR LES POIDS CHANGENT
+		document.getElementById("fieldset_show").style.display = "none"
+		removeContainerWeight()
 	}
+}
+
+// SI JE DECOCHE LA CHECKBOX, J'EFFACE TOUT
+function removeContainerWeight(){
+	document.getElementById("fieldset_weight").style.display = 'none'
+	containerMatrice.innerHTML = ""
+	document.getElementById('containerTabWeight').innerHTML = ""
+	comptEntree = 0
+	document.getElementById("containerTabWeight").style.display = 'none'
+	document.getElementById("conteneurInfos").style.display = 'none'
 }

@@ -15,7 +15,7 @@ let scoreCombinationExtra = []
 function continueWithoutWeight(){
 	tabMean = []
 	for (var i = 0; i < colNameLength; i++) {
-		tabMean.push(1)
+		tabMean.push(1 / colNameLength)
 	}
 	getScoreForEachPerson()
 }
@@ -37,7 +37,6 @@ function getScoreForEachPerson(){
 	        scoreTotal: sumArray(tabScoreWeighted[i])
 	    });
     }
-    console.log(jsonPerson);
     getScoreForEachCombination()
 }
 

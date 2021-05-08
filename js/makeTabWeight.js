@@ -1,14 +1,5 @@
 let tabCriteres;
 let comptEntree = 0;
-// RECUPERER LES DIV DE MA PAGE POUR POUVOIR LES AFFICHER/CACHER
-let conteneurAllWithoutCritere = document.getElementsByClassName("conteneur")
-
-// SI JE DECOCHE LA CHECKBOX, J'EFFACE TOUT
-function closeContainerWeight(){
-	document.getElementById("fieldset_weight").style.display = 'none'
-	containerMatrice.innerHTML = ""
-	someInputNotFill()
-}
 
 // SI JE COCHE LA CHECKBOX, JE VERIFIE LE NOMBRE DE CRITERES ET J'AGIS EN FONCTION
 function prepareTabMulti(){
@@ -114,6 +105,9 @@ function prepareTabWeight(tabPoids){
 
 	// J'AJOUTE LE TABLEAU AU CONTENU DEJA EXISTANT DE LA DIV containerTabWeight 
 	document.getElementById('containerTabWeight').innerHTML = tableString;
+
+	// ET JE L'AFFICHE
+	// document.getElementById('containerTabWeight').style.display = 'block';
 }
 
 

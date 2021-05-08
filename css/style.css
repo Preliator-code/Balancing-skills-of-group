@@ -202,7 +202,7 @@ nav a:hover{
 }
 
 .conteneur{
-	visibility: hidden;
+	display: none;
 }
 
 #fieldset_weight{
@@ -283,6 +283,7 @@ nav a:hover{
 }
 
 #containerTabWeight{
+	display: none;
 	margin-left: 100px;
 }
 
@@ -302,7 +303,7 @@ nav a:hover{
 /*---- AFFICHAGE DES GROUPES OPTIMISES ----*/
 
 #fieldset_show{
-/*	display: none;*/
+	display: none;
 }
 
 #showOptimize{

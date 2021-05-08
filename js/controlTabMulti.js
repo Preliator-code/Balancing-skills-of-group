@@ -39,9 +39,9 @@ function controlInput(inputEntree, idInputEntree, tabIdInputEntree, comptEntree)
 }
 
 function someInputNotFill(){
-	conteneurAllWithoutCritere[0].style.visibility = 'hidden'
-	conteneurAllWithoutCritere[1].style.visibility = 'hidden'
-	// document.getElementById("alerteChamps").style.display = 'block'
+	document.getElementById("containerTabWeight").style.display = 'none'
+	document.getElementById("conteneurInfos").style.display = 'none'
+	document.getElementById("alerteChamps").style.display = 'block'
 	document.getElementById("alerteCr").style.display = 'none'
 }
 
@@ -49,8 +49,8 @@ function allInputFill(){
 	getColumnValues(inputTabMulti)
 	document.getElementById("alerteChamps").style.display = 'none'
 	document.getElementById("alerteCr").style.display = 'block'
-	conteneurAllWithoutCritere[0].style.visibility = 'visible'
-	conteneurAllWithoutCritere[1].style.visibility = 'visible'
+	document.getElementById("containerTabWeight").style.display = 'block'
+	document.getElementById("conteneurInfos").style.display = 'block'
 }
 
 // OBJECTIF 1 : CREE 2 TABLEAUX QUI INDIQUENT QUELLES VALEURS POUR QUELLES COLONNES.
