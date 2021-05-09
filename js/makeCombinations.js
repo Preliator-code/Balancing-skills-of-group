@@ -83,8 +83,6 @@ function makeCombinations(){
 	}
 
 	nombrePersonnes > 0 ? document.getElementById("showNumberCombinations").style.display = 'block' : document.getElementById("showNumberCombinations").style.display = 'none'
-	
-	preparetab()
 }
 
 function hideElement(){

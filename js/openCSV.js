@@ -9,6 +9,7 @@ function doStuff(data) {
     colNameLength = colName.length - 1
 	data.pop()
 	dataTab = data
+    preparetab()
 	makeCombinations()
 }
 
