@@ -321,13 +321,14 @@ nav a:hover{
 
 #fieldset_show img{
 	position: absolute;
-	width: 25px;
+	width: 23px;
 	right: 10px;
 	top: -15px;
 }
 
 #fieldset_show img:hover{
-	width: 28px;
+	width: 26px;
+	cursor: pointer;
 }
 
 #showOptimize{

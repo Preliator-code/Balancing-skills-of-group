@@ -95,8 +95,8 @@ function getQuantileAndFilter(){
 	
 
 	if (dataTab.length % nombrePersonnes !== 0) {
-		quart1Extra = ss.quantile(scoreCombinationExtra, 0.35);
-		quart3Extra = ss.quantile(scoreCombinationExtra, 0.65);
+		quart1Extra = ss.quantile(scoreCombinationExtra, 0.47);
+		quart3Extra = ss.quantile(scoreCombinationExtra, 0.53);
 		noteMaxExtra = ss.max(scoreCombinationExtra);
 		jsonCombinationExtra.forEach(jsonElement =>{
 			if (jsonElement.scoreCombinaison > quart1Extra && jsonElement.scoreCombinaison < quart3Extra) {
