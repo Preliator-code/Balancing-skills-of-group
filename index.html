@@ -61,7 +61,9 @@
 					<label for="radioPoids">Paramétrer le poids des critères</label>
 					<input id="checkBox" type="checkbox">
 				</div>
-				<button onclick="buttonEnvoyer()">Calculer</button>
+				<button id="buttonSend" onclick="buttonEnvoyer()">Calculer</button>
+				<p id="errorGroupeSize" class="avertissement"><span class="errorWord">Erreur</span> : taille des groupes trop petite. Toutes les personnes ne sont pas incluses dans l'optimisation.</p>
+<!-- 				<p id="errorGroupeSize" class="avertissement"><span class="errorWord">Erreur</span> : taille des groupes trop petite. Toutes les personnes ne sont pas incluses dans l'optimisation.</p> -->
 			</fieldset>
 		</div>
 		<fieldset id="fieldset_weight" class="bloc">
@@ -80,6 +82,7 @@
 		</fieldset>
 		<fieldset id="fieldset_show" class="bloc">
 			<legend>Groupes optimisés</legend>
+			<img src="Ressources/img/download.svg" alt="">
 			<div id="showOptimize" class="containerFlex"></div>
 		</fieldset>
 	</div>

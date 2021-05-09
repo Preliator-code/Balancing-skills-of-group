@@ -34,6 +34,7 @@ function trieAleatoireJson(){
 }
 
 function bestCombination(){
+	document.getElementById("errorGroupeSize").style.display = 'none'
 	compteur = 0
 	a_remplir = []
 	if (dataTab.length % nombrePersonnes === 0) {
@@ -118,7 +119,6 @@ function showOptimisedGroup(){
 						<p class='score'>${jsonCompoFinale[i].scoreEquipe} <span class='noteMax'>/ ${jsonCompoFinale[i].compositionPersonnes.length == nombrePersonnes ? noteMax.toFixed(0) : noteMaxExtra.toFixed(0)}</span></p>
 					</div>`		
 	}
-	console.log(jsonCompoFinale);
 	document.getElementById("fieldset_show").style.display = "block"
 	document.getElementById("showOptimize").innerHTML = listDiv
 }

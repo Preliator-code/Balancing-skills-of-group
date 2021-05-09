@@ -165,7 +165,7 @@ nav a:hover{
 	margin-bottom: 10px;
 }
 
-#infosSupp p{
+#ChoixNumber + p{
 	margin-top: 5px;
 	font-size: 1.3em;
 	color: #007128;
@@ -187,6 +187,19 @@ nav a:hover{
 	background-color: white;
 	color: #adaf0a;
 	box-shadow: 2px 2px 5px black;
+}
+
+.errorWord{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#buttonSend + p{
+	align-self: center;
+	display: none;
+	margin-top: 10px;
+	width: 300px;
+	text-align: center;
 }
 
 
