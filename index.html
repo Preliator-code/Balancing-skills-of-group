@@ -25,6 +25,7 @@
 	<script defer src="js/calculIndiceMulticritere.js"></script>
 	<script defer src="js/calculWithCombinations.js"></script>
 	<script defer src="js/calculBestsCombinations.js"></script>
+	<script defer src="js/exportCSV.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -82,7 +83,7 @@
 		</fieldset>
 		<fieldset id="fieldset_show" class="bloc">
 			<legend>Groupes optimisés</legend>
-			<img src="Ressources/img/download.svg" alt="">
+			<img src="Ressources/img/download.svg" alt="" onclick="exportCSV()">
 			<div id="showOptimize" class="containerFlex"></div>
 		</fieldset>
 	</div>

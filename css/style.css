@@ -316,6 +316,18 @@ nav a:hover{
 
 #fieldset_show{
 	display: none;
+	position: relative;
+}
+
+#fieldset_show img{
+	position: absolute;
+	width: 25px;
+	right: 10px;
+	top: -15px;
+}
+
+#fieldset_show img:hover{
+	width: 28px;
 }
 
 #showOptimize{

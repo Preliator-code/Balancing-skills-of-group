@@ -121,4 +121,5 @@ function showOptimisedGroup(){
 	}
 	document.getElementById("fieldset_show").style.display = "block"
 	document.getElementById("showOptimize").innerHTML = listDiv
+	convertCsv()
 }

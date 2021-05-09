@@ -110,9 +110,5 @@ function getQuantileAndFilter(){
 		})
 	}
 	personOnRetained = [...new Set(personOnRetained)]
-	console.log(personOnRetained);
 	personOnRetained.length === dataTab.length ? bestCombination() : document.getElementById("errorGroupeSize").style.display = 'block'
-
-	console.log(jsonCombinationRetained);
-	console.log(jsonCombinationRetainedExtra);
 }
