@@ -165,6 +165,10 @@ nav a:hover{
 	margin-bottom: 10px;
 }
 
+#ChoixNumber{
+	width: 35px;
+}
+
 #ChoixNumber + p{
 	margin-top: 5px;
 	font-size: 1.3em;
