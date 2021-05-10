@@ -2,6 +2,7 @@ let tabCriteres;
 let comptEntree = 0;
 let inputLittleTabMulti;
 let comptLittleTabMulti;
+let littleTabMulti = 0
 
 // SI JE COCHE LA CHECKBOX, JE VERIFIE LE NOMBRE DE CRITERES ET J'AGIS EN FONCTION
 function prepareTabMulti(){
@@ -10,8 +11,8 @@ function prepareTabMulti(){
 	if(colName.length > colNameLength){
 		colName.shift()
 	}
-
-	(colName.length) < 3 ? makeLittleTabMulti() : makeTabMulti()
+	littleTabMulti = (colName.length) < 3 ? 1 : 0
+	littleTabMulti === 1 ? makeLittleTabMulti() : makeTabMulti()
 }
 
 function makeLittleTabMulti(){
@@ -35,8 +36,8 @@ function getValueLittleTabMulti(){
 	inputLittleTabMulti.forEach(entree =>{
 		tabMean.push(entree.value / comptLittleTabMulti)
 	})
-	console.log(tabMean);
 	getScoreForEachPerson()
+	// ICI, JE N'AI PAS BESOIN DE PASSER PAR continueWithoutWeight() SI JE N'ENTRE PAS DE POIDS, CAR J'AI UNE VALEUR PAR DEFAUT A 1 SUR MES INPUT ET (entree.value / comptLittleTabMulti) ME RETOURNE BIEN UN tabMean à 2x0.5
 }
 
 function makeTabMulti(){
