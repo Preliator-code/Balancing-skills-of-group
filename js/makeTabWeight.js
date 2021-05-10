@@ -34,6 +34,7 @@ function getValueLittleTabMulti(){
 		comptLittleTabMulti += parseInt(entree.value)
 	})
 	inputLittleTabMulti.forEach(entree =>{
+		toutRemplis = 1
 		tabMean.push(entree.value / comptLittleTabMulti)
 	})
 	getScoreForEachPerson()

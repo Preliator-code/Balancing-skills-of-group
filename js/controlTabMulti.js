@@ -41,6 +41,7 @@ function controlInput(inputEntree, idInputEntree, tabIdInputEntree, comptEntree)
 }
 
 function someInputNotFill(){
+	toutRemplis = 0
 	document.getElementById("containerTabWeight").style.display = 'none'
 	document.getElementById("conteneurInfos").style.display = 'none'
 	document.getElementById("alerteChamps").style.display = 'block'
