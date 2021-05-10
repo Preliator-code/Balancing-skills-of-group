@@ -13,13 +13,16 @@ function entreNbrPers(number){
 }
 
 function buttonEnvoyer(){
-	if (nombrePersonnes > 0 && document.getElementById("checkBox").checked) {
+	if (littleTabMulti === 0 && document.getElementById("checkBox").checked) {
 		toutRemplis === 0 ? prepareTabMulti() : scenarioDeux()
 	}
-	if (nombrePersonnes > 0 && (!(document.getElementById("checkBox").checked))) {
+	if (littleTabMulti === 0 && (!(document.getElementById("checkBox").checked))) {
 		toutRemplis = 0
 		continueWithoutWeight()
 		removeContainerWeight()
+	}
+	if (littleTabMulti === 1 && nombrePersonnes > 0 && document.getElementById("checkBox").checked) {
+		toutRemplis === 0 ? prepareTabMulti() : getScoreForEachPerson()
 	}
 }
 

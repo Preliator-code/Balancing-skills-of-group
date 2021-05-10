@@ -79,8 +79,8 @@ function getQuantileAndFilter(){
 	jsonCombinationRetained = []
 	jsonCombinationRetainedExtra = []
 	let personOnRetained = []
-	quart1 = nombrePersonnes == 2 ? ss.quantile(scoreCombination, 0.30) : ss.quantile(scoreCombination, 0.35);
-	quart3 = nombrePersonnes == 2 ? ss.quantile(scoreCombination, 0.70) : ss.quantile(scoreCombination, 0.65);
+	quart1 = nombrePersonnes == 2 ? ss.quantile(scoreCombination, 0.20) : ss.quantile(scoreCombination, 0.35);
+	quart3 = nombrePersonnes == 2 ? ss.quantile(scoreCombination, 0.80) : ss.quantile(scoreCombination, 0.65);
 	noteMax = ss.max(scoreCombination);
 	jsonCombination.forEach(jsonElement =>{
 		if (jsonElement.scoreCombinaison > quart1 && jsonElement.scoreCombinaison < quart3) {
@@ -91,15 +91,14 @@ function getQuantileAndFilter(){
 		jsonElement.contenant.forEach(personne =>{
 				personOnRetained.push(personne)
 		})
-	})
-	
+	})	
 
 	if (dataTab.length % nombrePersonnes !== 0) {
 		quart1Extra = ss.quantile(scoreCombinationExtra, 0.47);
 		quart3Extra = ss.quantile(scoreCombinationExtra, 0.53);
 		noteMaxExtra = ss.max(scoreCombinationExtra);
 		jsonCombinationExtra.forEach(jsonElement =>{
-			if (jsonElement.scoreCombinaison > quart1Extra && jsonElement.scoreCombinaison < quart3Extra) {
+			if (jsonElement.scoreCombinaison >= quart1Extra && jsonElement.scoreCombinaison <= quart3Extra) {
 				jsonCombinationRetainedExtra.push(jsonElement)
 			}
 		})

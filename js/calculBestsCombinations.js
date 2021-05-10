@@ -97,6 +97,8 @@ function bestCombination(){
 		}
 	}
 	console.log(compteur);
+	console.log(tabMean);
+	console.log(jsonCombinationRetained);
 	showOptimisedGroup()
 }
 

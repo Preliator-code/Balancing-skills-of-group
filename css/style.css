@@ -209,8 +209,14 @@ nav a:hover{
 
 /*---- TABLE POIDS ----*/
 
+#containerMatrice{
+	display: flex;
+}
+
 .containerMatriceLittleTabMulti{
-	margin-right: 10px;
+	display: flex;
+	align-items: center;
+	padding: 0 10px 0 10px;
 }
 
 .containerFlex{

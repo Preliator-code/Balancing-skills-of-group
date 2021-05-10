@@ -1,5 +1,8 @@
 let tabCriteres;
 let comptEntree = 0;
+let inputLittleTabMulti;
+let comptLittleTabMulti;
+let littleTabMulti = 0
 
 // SI JE COCHE LA CHECKBOX, JE VERIFIE LE NOMBRE DE CRITERES ET J'AGIS EN FONCTION
 function prepareTabMulti(){
@@ -8,19 +11,34 @@ function prepareTabMulti(){
 	if(colName.length > colNameLength){
 		colName.shift()
 	}
-
-	(colName.length) < 3 ? makeLittleTabMulti() : makeTabMulti()
+	littleTabMulti = (colName.length) < 3 ? 1 : 0
+	littleTabMulti === 1 ? makeLittleTabMulti() : makeTabMulti()
 }
 
 function makeLittleTabMulti(){
 	let ligne = ""
-	for (var i = 1; i < colName.length; i++) {
+	for (var i = 0; i < colName.length; i++) {
 		ligne +=	`<div class="containerMatriceLittleTabMulti">
-						<label>Poids ${colName[i]}</label>
-						<input type="number" class="weightLittleTabMulti">
+						<label>${colName[i]}</label>
+						<input id="input${i}" type="number" class="weightLittleTabMulti" oninput="getValueLittleTabMulti()" min="1" value="1">
 					</div>`
 	}
 	containerMatrice.innerHTML = ligne
+}
+
+function getValueLittleTabMulti(){
+	tabMean = []
+	comptLittleTabMulti = 0
+	inputLittleTabMulti = document.querySelectorAll(".weightLittleTabMulti")
+	inputLittleTabMulti.forEach(entree =>{
+		comptLittleTabMulti += parseInt(entree.value)
+	})
+	inputLittleTabMulti.forEach(entree =>{
+		toutRemplis = 1
+		tabMean.push(entree.value / comptLittleTabMulti)
+	})
+	getScoreForEachPerson()
+	// ICI, JE N'AI PAS BESOIN DE PASSER PAR continueWithoutWeight() SI JE N'ENTRE PAS DE POIDS, CAR J'AI UNE VALEUR PAR DEFAUT A 1 SUR MES INPUT ET (entree.value / comptLittleTabMulti) ME RETOURNE BIEN UN tabMean à 2x0.5
 }
 
 function makeTabMulti(){
