@@ -91,15 +91,14 @@ function getQuantileAndFilter(){
 		jsonElement.contenant.forEach(personne =>{
 				personOnRetained.push(personne)
 		})
-	})
-	
+	})	
 
 	if (dataTab.length % nombrePersonnes !== 0) {
 		quart1Extra = ss.quantile(scoreCombinationExtra, 0.47);
 		quart3Extra = ss.quantile(scoreCombinationExtra, 0.53);
 		noteMaxExtra = ss.max(scoreCombinationExtra);
 		jsonCombinationExtra.forEach(jsonElement =>{
-			if (jsonElement.scoreCombinaison > quart1Extra && jsonElement.scoreCombinaison < quart3Extra) {
+			if (jsonElement.scoreCombinaison >= quart1Extra && jsonElement.scoreCombinaison <= quart3Extra) {
 				jsonCombinationRetainedExtra.push(jsonElement)
 			}
 		})
