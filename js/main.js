@@ -14,11 +14,10 @@ function entreNbrPers(number){
 
 function buttonEnvoyer(){
 	if (nombrePersonnes > 0 && document.getElementById("checkBox").checked) {
-		// document.getElementById("fieldset_show").style.display = "none"
-		// removeContainerWeight()
 		toutRemplis === 0 ? prepareTabMulti() : scenarioDeux()
 	}
 	if (nombrePersonnes > 0 && (!(document.getElementById("checkBox").checked))) {
+		toutRemplis = 0
 		continueWithoutWeight()
 		removeContainerWeight()
 	}
