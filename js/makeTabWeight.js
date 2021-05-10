@@ -14,9 +14,9 @@ function prepareTabMulti(){
 
 function makeLittleTabMulti(){
 	let ligne = ""
-	for (var i = 1; i < colName.length; i++) {
+	for (var i = 0; i < colName.length; i++) {
 		ligne +=	`<div class="containerMatriceLittleTabMulti">
-						<label>Poids ${colName[i]}</label>
+						<label>${colName[i]}</label>
 						<input type="number" class="weightLittleTabMulti">
 					</div>`
 	}
