@@ -1,5 +1,7 @@
 let tabCriteres;
 let comptEntree = 0;
+let inputLittleTabMulti;
+let comptLittleTabMulti;
 
 // SI JE COCHE LA CHECKBOX, JE VERIFIE LE NOMBRE DE CRITERES ET J'AGIS EN FONCTION
 function prepareTabMulti(){
@@ -17,10 +19,24 @@ function makeLittleTabMulti(){
 	for (var i = 0; i < colName.length; i++) {
 		ligne +=	`<div class="containerMatriceLittleTabMulti">
 						<label>${colName[i]}</label>
-						<input type="number" class="weightLittleTabMulti">
+						<input id="input${i}" type="number" class="weightLittleTabMulti" oninput="getValueLittleTabMulti()" min="1" value="1">
 					</div>`
 	}
 	containerMatrice.innerHTML = ligne
+}
+
+function getValueLittleTabMulti(){
+	tabMean = []
+	comptLittleTabMulti = 0
+	inputLittleTabMulti = document.querySelectorAll(".weightLittleTabMulti")
+	inputLittleTabMulti.forEach(entree =>{
+		comptLittleTabMulti += parseInt(entree.value)
+	})
+	inputLittleTabMulti.forEach(entree =>{
+		tabMean.push(entree.value / comptLittleTabMulti)
+	})
+	console.log(tabMean);
+	getScoreForEachPerson()
 }
 
 function makeTabMulti(){
