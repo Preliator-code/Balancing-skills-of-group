@@ -1,6 +1,7 @@
 let dataTab = []
 let colName = []
 let colNameLength;
+let file;
 
 function doStuff(data) {
 	// J'ENLEVE LE PREMIER ELEMENT (LES ENTETES) ET LE DERNIER ELEMENT (ELEMENT VIDE)
@@ -9,8 +10,12 @@ function doStuff(data) {
     colNameLength = colName.length - 1
 	data.pop()
 	dataTab = data
-    preparetab()
-	makeCombinations()
+    if (file) {
+        document.getElementById("apercuCsv").style.display = 'block';
+        document.getElementById("infosSupp").style.display = 'flex';
+        preparetab()
+        makeCombinations()
+    }
 }
 
 function parseData(url, callBack) {
@@ -26,7 +31,7 @@ function parseData(url, callBack) {
 }
 
 function handleFileSelect(evt) {
-	var file = evt.target.files[0];
+	file = evt.target.files[0];
 	parseData(file, doStuff);
 }
 
@@ -34,4 +39,4 @@ $(document).ready(function(){
     $("#pathCsv").change(handleFileSelect);
 });
 
-parseData("../Ressources/notes.csv", doStuff);
+// parseData("../Ressources/notes.csv", doStuff);

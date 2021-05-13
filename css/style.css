@@ -119,6 +119,7 @@ nav a:hover{
 /*---- APERCU TABLE ----*/
 
 #apercuCsv{
+	display: none;
 	overflow: scroll;
 	height: 245px;
 	width: 421px;
@@ -157,7 +158,7 @@ nav a:hover{
 /*---- INFOS SUPP----*/
 
 #infosSupp{
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: flex-start;
 }
