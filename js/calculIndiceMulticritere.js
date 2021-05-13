@@ -111,12 +111,13 @@ function significatifRi(){
 	document.getElementById("cr").style.backgroundColor = '#3EDB00'
 	document.getElementById("alerteCr").style.visibility = 'hidden'
 	document.querySelector("#containerTabWeight table").style.backgroundColor = '#3FCF00'
-	
+	document.getElementById("fieldset_show").style.display = 'block'
+	getScoreForEachPerson()
 }
 
 function nonSignificatifRi(){
 	document.getElementById("cr").style.backgroundColor = '#BC0000'
 	document.getElementById("alerteCr").style.visibility = 'visible'
 	document.querySelector("#containerTabWeight table").style.backgroundColor = '#FF5252'
-	getScoreForEachPerson()
+	document.getElementById("fieldset_show").style.display = 'none'
 }
