@@ -4,6 +4,7 @@
   margin: 0; 
   padding: 0;
 }
+
 html, body { 
 	min-height: 100vh;
 	display: flex;
@@ -70,15 +71,15 @@ button, input, optgroup, select, textarea {
 #header{
 	display: flex;
 	width: 100%;
-	height: 40px;
+	height: 45px;
+	align-items: center;
+	justify-content: center;
 	background-color: lightgrey;
 	box-shadow: 1px 1px 5px black;
 	margin-bottom: 15px;
 }
 
 #header h1{
-	display: inline-block;
-	margin: auto;
 	font-family: 'Kiwi Maru', serif;
 	font-size: 2em;
 	letter-spacing: 2px;
@@ -211,6 +212,7 @@ nav a:hover{
 
 #containerMatrice{
 	display: flex;
+	flex-direction: column;
 }
 
 .containerMatriceLittleTabMulti{

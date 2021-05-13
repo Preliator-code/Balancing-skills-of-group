@@ -1,21 +1,21 @@
-prenom;matiere_1;matiere_2
-bruno;3;2
-amaury;2;1
-pouetpouet;1;2
-Clement;4;1
-baba;5;2
-Idrissa;2;3
-Stéphane;5;2
-Loïc;4;1
-Ariane;1;4
-Camille;2;5
-Clarisse;5;5
-Maodo;3;4
-Lubin;2;2
-Louis;5;5
-Ashley;4;3
-leopold;1;2
-Romain;2;1
-Serigne Faye;3;4
-Serigne Fallou;2;2
-Victor;1;1
+prenom;matiere_1;matiere_2;matiere_3
+bruno;3;2;2
+amaury;2;1;1
+pouetpouet;1;2;2
+Clement;4;1;1
+baba;5;2;2
+Idrissa;2;3;3
+Stéphane;5;2;2
+Loïc;4;1;1
+Ariane;1;4;4
+Camille;2;5;5
+Clarisse;5;5;5
+Maodo;3;4;4
+Lubin;2;2;2
+Louis;5;5;5
+Ashley;4;3;3
+leopold;1;2;2
+Romain;2;1;1
+Serigne Faye;3;4;4
+Serigne Fallou;2;2;2
+Victor;1;1;1
